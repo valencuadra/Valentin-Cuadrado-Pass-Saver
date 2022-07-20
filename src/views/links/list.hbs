@@ -1,0 +1,34 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{{url}}" target="_blank">
+                            <h3 class="card-title text-uppercase">
+                                {{title}}
+                            </h3>
+                        </a>
+                        <p class="m-2" align="left"><strong>- Usuario:</strong> {{nombre}}</p>
+                        <p class="m-2" align="left"><strong>- Mail:</strong> {{mail}}</p>
+                        <p class="m-2" align="left"><strong>- Contraseña:</strong> {{contrasena}}</p>
+                        <div class="card boxo mb-2">
+                        <p><i>{{timeago created_at}}</i></p>
+                        </div>
+                        <div>
+                        <a href="/links/delete/{{id}}" class="btn btn-danger">Borrar</a>
+                        <a href="/links/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>Sorry, aún no tenes links disponibles</p>
+                    <a href="/links/add">Create uno</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
